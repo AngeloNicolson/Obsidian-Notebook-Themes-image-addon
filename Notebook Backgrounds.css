@@ -32,7 +32,47 @@ https://angel-rs.github.io/css-color-filter-generator
   --page-manila: #f3deaf;
   --page-blue: #3f76ed;
 
+  /* Image Color Effect Variables */
+  --image-white: brightness(0) saturate(100%) invert(89%) sepia(1%)
+    saturate(2714%) hue-rotate(196deg) brightness(107%) contrast(98%);
+  --image-blue: brightness(0) saturate(100%) invert(36%) sepia(95%)
+    saturate(945%) hue-rotate(199deg) brightness(95%) contrast(95%);
+  --image-red: brightness(0) saturate(100%) invert(40%) sepia(41%)
+    saturate(1024%) hue-rotate(316deg) brightness(99%) contrast(94%);
+  --image-green: brightness(0) saturate(100%) invert(26%) sepia(30%)
+    saturate(1491%) hue-rotate(106deg) brightness(96%) contrast(97%);
+  --image-black: brightness(0) saturate(100%) invert(14%) sepia(19%)
+    saturate(296%) hue-rotate(5deg) brightness(90%) contrast(96%);
+  --image-gray: brightness(0) saturate(100%) invert(3%) sepia(34%)
+    saturate(457%) hue-rotate(23deg) brightness(96%) contrast(94%);
+  --image-purple: brightness(0) saturate(100%) invert(48%) sepia(47%)
+    saturate(151%) hue-rotate(198deg) brightness(96%) contrast(99%);
+
   --grid-size: 32px;
+}
+
+/* -------------------------- Recolor Image Class --------------------------- */
+/* Add this class to the container or the image itself for independent recoloring */
+.recolor-image-white img {
+  filter: var(--image-white);
+}
+.recolor-image-blue img {
+  filter: var(--image-blue);
+}
+.recolor-image-red img {
+  filter: var(--image-red);
+}
+.recolor-image-green img {
+  filter: var(--image-green);
+}
+.recolor-image-black img {
+  filter: var(--image-black);
+}
+.recolor-image-gray img {
+  filter: var(--image-gray);
+}
+.recolor-image-purple img {
+  filter: var(--image-purple);
 }
 
 /* Recolors images on the page with the current accent color. */
@@ -190,8 +230,8 @@ https://angel-rs.github.io/css-color-filter-generator
 }
 
 /* Code Blocks */
-:is(.page-white, .page-manila, .page-blueprint) :is(code,
-.HyperMD-codeblock, .cm-inline-code) {
+:is(.page-white, .page-manila, .page-blueprint)
+  :is(code, .HyperMD-codeblock, .cm-inline-code) {
   --code-normal: var(--accent-color);
   --code-background: color-mix(
     in srgb,
